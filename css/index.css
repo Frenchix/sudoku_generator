@@ -1,0 +1,19 @@
+#container {
+    display: flex;
+    background-color: antiquewhite;
+    width: 100%;
+    height: 100vh;
+}
+
+#gate {
+    border: 1px solid black;
+    width: 810px;
+    height: 810px;
+    margin: auto;
+}
+
+.cell {
+    border: 1px solid black;
+    width: 90px;
+    height: 90px;
+}

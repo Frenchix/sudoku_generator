@@ -1,0 +1,19 @@
+{
+  "name": "sudoku_generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Frenchix/sudoku_generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Frenchix/sudoku_generator/issues"
+  },
+  "homepage": "https://github.com/Frenchix/sudoku_generator#readme"
+}
