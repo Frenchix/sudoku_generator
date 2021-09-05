@@ -6,14 +6,22 @@
 }
 
 #gate {
+    display: flex;
+    flex-wrap: wrap;
     border: 1px solid black;
-    width: 810px;
+    width: 812px;
     height: 810px;
     margin: auto;
 }
 
-.cell {
+.cellContainer {
     border: 1px solid black;
+    width: 270px;
+    height: 270px;
+}
+
+.cell {
+    border: 1px solid lightgray;
     width: 90px;
     height: 90px;
 }
