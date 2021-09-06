@@ -14,14 +14,24 @@
     margin: auto;
 }
 
-.cellContainer {
-    border: 1px solid black;
-    width: 270px;
-    height: 270px;
-}
-
 .cell {
     border: 1px solid lightgray;
     width: 90px;
     height: 90px;
+    text-align:center;
 }
+
+.cell:nth-child(3n) {
+  border-right:solid ;
+}
+
+.border-top {
+    border-top:solid;
+}
+.border-left {
+    border-left:solid;
+}
+.border-bottom {
+    border-bottom: solid;
+}
+
