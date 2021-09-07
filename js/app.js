@@ -4,6 +4,7 @@ const app = {
         app.drawGate();
     },
     drawGate: function() {
+        let container = -4;
         const gateDOM = document.getElementById("gate");
             for (var row = 0; row < app.GATE; row++) {
                 for (var col = 0; col < app.GATE; col++) {
@@ -21,11 +22,17 @@ const app = {
                         div.classList.add("border-bottom");
                     }
                     //attribution des attributs row, col et container
-                    while(row % 3 !== 0 && row !== 0) {
-                        while (col % 3 !== 0 && col !== 0) {
-                            console.log("row", row);
-                            console.log("col", col);
-                        }
+                    if (row % 3 === 0 && col === 0) {
+                        container += 3;
+                    }
+                    if (col % 3 === 0 ) {
+                        container++;
+                    }
+                    div.setAttribute("row", row);
+                    div.setAttribute("col", col);
+                    div.setAttribute("container", container);
+                    if (col === 8) {
+                        container -= 3;
                     }
                     gateDOM.appendChild(div);
             }
