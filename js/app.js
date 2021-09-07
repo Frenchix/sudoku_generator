@@ -1,5 +1,9 @@
 const app = {
     GATE: 9,
+    rowArray: [],
+    colArray: [],
+    containerArray: [],
+    
     init: function() {
         app.drawGate();
     },
@@ -31,12 +35,18 @@ const app = {
                     div.setAttribute("row", row);
                     div.setAttribute("col", col);
                     div.setAttribute("container", container);
+                    div.innerText = app.randomNumber();
+                    //Affichage des nombres dans les cellules
+
                     if (col === 8) {
                         container -= 3;
                     }
                     gateDOM.appendChild(div);
             }
         }
+    },
+    randomNumber: function() {
+        return Math.floor(Math.random() * app.GATE) + 1;
     },
 }
 
