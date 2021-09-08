@@ -1,16 +1,7 @@
-async function first() {
-    for (var i = 0; i <1; i++) {
-        console.log("premier");
-        for (var y =0; y <1000000000000; y++) {
+const rowArray = []
 
-        }
-        console.log("deuxieme");
-    }
-};
+rowArray[1] = [2,3,4];
 
-function second() {
-    console.log("troisieme");
-};
+console.log(rowArray);
 
-first();
-second();
+console.log(rowArray[0]?.length);

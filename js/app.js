@@ -9,6 +9,7 @@ const app = {
     },
     drawGate: function() {
         let container = -4;
+        let randomNumber;
         const gateDOM = document.getElementById("gate");
             for (var row = 0; row < app.GATE; row++) {
                 for (var col = 0; col < app.GATE; col++) {
@@ -35,14 +36,36 @@ const app = {
                     div.setAttribute("row", row);
                     div.setAttribute("col", col);
                     div.setAttribute("container", container);
-                    div.innerText = app.randomNumber();
+                    
                     //Affichage des nombres dans les cellules
-
+                    randomNumber = app.randomNumber();
+                    while (app.rowArray[row]?.includes(randomNumber) || app.colArray[col]?.includes(randomNumber) || app.containerArray[container]?.includes(randomNumber)) {
+                        randomNumber = app.randomNumber();
+                    }
+                    if (!app.rowArray[row]?.length) {
+                        app.rowArray[row] = [randomNumber];
+                    } else {
+                        app.rowArray[row].push(randomNumber);
+                    }
+                    if (!app.colArray[col]?.length) {
+                        app.colArray[col] = [randomNumber];
+                    } else {
+                        app.colArray[col].push(randomNumber);
+                    }
+                    if (!app.containerArray[container]?.length) {
+                        app.containerArray[container] = [randomNumber];
+                    } else {
+                        app.containerArray[container].push(randomNumber);
+                    }
+                    div.innerText = randomNumber;
                     if (col === 8) {
                         container -= 3;
                     }
                     gateDOM.appendChild(div);
             }
+            console.log ("rowArray", app.rowArray);
+        console.log("colArray", app.colArray);
+        console.log("containerArray", app.containerArray)
         }
     },
     randomNumber: function() {
