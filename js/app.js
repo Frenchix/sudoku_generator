@@ -72,7 +72,7 @@ const app = {
     setNumber: function() {
         let container = -4;
         let randomNumber;
-        for (var row = 0; row < app.GATE; row++) {
+        for (var row = 0; row < 2; row++) {
             app.rowArray = [];
             for (var col = 0; col < app.GATE; col++) {
                 app.currentArray = [];
@@ -107,6 +107,9 @@ const app = {
                         app.colArray[col]?.length ? app.colArray[col].push(randomNumber) : app.colArray[col] = [randomNumber];
                         app.containerArray[container]?.length ? app.containerArray[container].push(randomNumber) : app.containerArray[container] = [randomNumber];
                         break;
+                    case 2:
+
+                        break;
                 }
                 if (col === 8) {
                     container -= 3;
@@ -116,6 +119,15 @@ const app = {
                 console.log("match ok");
             } else {
                 console.log("pas de match");
+                app.colArray.map(function(item,index) {
+                    item.slice(0, -1);
+                });
+                console.log("newColArray", app.colArray);
+                for (var a = 1; a < 4; a++) {
+                    app.containerArray[app.containerArray.length - a].slice(0, -3);
+                }
+                console.log("newContainerArray", app.containerArray);
+                // row--;
             }
         }
         console.log("rowArray", app.rowArray);

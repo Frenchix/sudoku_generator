@@ -1,10 +1,9 @@
 array1 = [1,2,3,4,5,6,7,8,9];
-array2 = [2,3,1,4,5,6,7,8,8];
+colArray = [[1,2,3,1,4,5,6,7,8,8],[1,2,3,4,5,6,7,8,9]];
 currentArray = [];
 rowArray = [2,3,1,4,8];
 
-console.log("array1", array1);
-console.log("array2", array2);
+// console.log("array1", array1);
 
 // if(arrayEquals(array1, array2.sort())) {
 //     console.log("same");
@@ -19,12 +18,17 @@ console.log("array2", array2);
 //       a.every((val, index) => val === b[index]);
 // }
 
-array1.map(function(item){
-    if (!rowArray.includes(item)){
-        currentArray.push(item);
-    }
-});
+// array1.map(function(item){
+//     if (!rowArray.includes(item)){
+//         currentArray.push(item);
+//     }
+// });
 
-console.log("array1", array1);
-console.log("rowArray", rowArray);
-console.log("currentArray", currentArray);
+// console.log("array1", array1);
+// console.log("rowArray", rowArray);
+// console.log("currentArray", currentArray);
+colArray.map(function(item,index) {
+    item.slice(0, -2);
+    console.log("item", item);
+});
+console.log("newColArray", colArray);
