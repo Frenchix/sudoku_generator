@@ -72,7 +72,7 @@ const app = {
     setNumber: function() {
         let container = -4;
         let randomNumber;
-        for (var row = 0; row < 2; row++) {
+        for (var row = 0; row < app.GATE; row++) {
             app.rowArray = [];
             for (var col = 0; col < app.GATE; col++) {
                 app.currentArray = [];
@@ -89,11 +89,11 @@ const app = {
                                 app.currentArray.push(item);
                             }
                         });
-                        console.log("currentArray", app.currentArray);
-                        randomNumber = app.currentArray[Math.floor(Math.random() * app.currentArray.length)];
-                        app.rowArray.push(randomNumber);
-                        app.colArray[col]?.length ? app.colArray[col].push(randomNumber) : app.colArray[col] = [randomNumber];
-                        app.containerArray[container]?.length ? app.containerArray[container].push(randomNumber) : app.containerArray[container] = [randomNumber];
+                        // console.log("currentArray0", app.currentArray);
+                        // randomNumber = app.currentArray[Math.floor(Math.random() * app.currentArray.length)];
+                        // app.rowArray.push(randomNumber);
+                        // app.colArray[col]?.length ? app.colArray[col].push(randomNumber) : app.colArray[col] = [randomNumber];
+                        // app.containerArray[container]?.length ? app.containerArray[container].push(randomNumber) : app.containerArray[container] = [randomNumber];
                         break;
                     case 1:
                         app.allArray.map(function(item){
@@ -101,16 +101,102 @@ const app = {
                                 app.currentArray.push(item);
                             }
                         });
-                        console.log("currentArray", app.currentArray);
-                        randomNumber = app.currentArray[Math.floor(Math.random() * app.currentArray.length)];
-                        app.rowArray.push(randomNumber);
-                        app.colArray[col]?.length ? app.colArray[col].push(randomNumber) : app.colArray[col] = [randomNumber];
-                        app.containerArray[container]?.length ? app.containerArray[container].push(randomNumber) : app.containerArray[container] = [randomNumber];
+                        // console.log("currentArray1", app.currentArray);
+                        // randomNumber = app.currentArray[Math.floor(Math.random() * app.currentArray.length)];
+                        // app.rowArray.push(randomNumber);
+                        // app.colArray[col]?.length ? app.colArray[col].push(randomNumber) : app.colArray[col] = [randomNumber];
+                        // app.containerArray[container]?.length ? app.containerArray[container].push(randomNumber) : app.containerArray[container] = [randomNumber];
                         break;
                     case 2:
-
+                        app.allArray.map(function(item){
+                            if (!app.containerArray[container].includes(item)){
+                                app.currentArray.push(item);
+                            }
+                        });
+                        // console.log("currentArray2", app.currentArray);
+                        // randomNumber = app.currentArray[Math.floor(Math.random() * app.currentArray.length)];
+                        // app.rowArray.push(randomNumber);
+                        // app.colArray[col]?.length ? app.colArray[col].push(randomNumber) : app.colArray[col] = [randomNumber];
+                        // app.containerArray[container]?.length ? app.containerArray[container].push(randomNumber) : app.containerArray[container] = [randomNumber];
+                        break;
+                    case 3: case 6:
+                        app.allArray.map(function(item){
+                            if (!app.colArray[col].includes(item) && !app.rowArray.includes(item)){
+                                app.currentArray.push(item);
+                            }
+                        });
+                        // console.log("currentArray3", app.currentArray);
+                        // randomNumber = app.currentArray[Math.floor(Math.random() * app.currentArray.length)];
+                        // app.rowArray.push(randomNumber);
+                        // app.colArray[col]?.length ? app.colArray[col].push(randomNumber) : app.colArray[col] = [randomNumber];
+                        // app.containerArray[container]?.length ? app.containerArray[container].push(randomNumber) : app.containerArray[container] = [randomNumber];
+                        break;
+                    case 4: case 7:
+                        app.allArray.map(function(item){
+                            if (!app.colArray[col].includes(item) && !app.rowArray.includes(item) && !app.containerArray[container].includes(item)){
+                                app.currentArray.push(item);
+                            }
+                        });
+                        // console.log("currentArray4", app.currentArray);
+                        // randomNumber = app.currentArray[Math.floor(Math.random() * app.currentArray.length)];
+                        // app.rowArray.push(randomNumber);
+                        // app.colArray[col]?.length ? app.colArray[col].push(randomNumber) : app.colArray[col] = [randomNumber];
+                        // app.containerArray[container]?.length ? app.containerArray[container].push(randomNumber) : app.containerArray[container] = [randomNumber];
+                        break;
+                    case 5:
+                        app.allArray.map(function(item){
+                            if (!app.containerArray[container].includes(item) && !app.colArray[col].includes(item)){
+                                app.currentArray.push(item);
+                            }
+                        });
+                        // console.log("currentArray2", app.currentArray);
+                        // randomNumber = app.currentArray[Math.floor(Math.random() * app.currentArray.length)];
+                        // app.rowArray.push(randomNumber);
+                        // app.colArray[col]?.length ? app.colArray[col].push(randomNumber) : app.colArray[col] = [randomNumber];
+                        // app.containerArray[container]?.length ? app.containerArray[container].push(randomNumber) : app.containerArray[container] = [randomNumber];
+                        break;
+                    // case 6:
+                    //     app.allArray.map(function(item){
+                    //         if (!app.colArray[col].includes(item) && !app.rowArray.includes(item)){
+                    //             app.currentArray.push(item);
+                    //         }
+                    //     });
+                    //     console.log("currentArray3", app.currentArray);
+                    //     randomNumber = app.currentArray[Math.floor(Math.random() * app.currentArray.length)];
+                    //     app.rowArray.push(randomNumber);
+                    //     app.colArray[col]?.length ? app.colArray[col].push(randomNumber) : app.colArray[col] = [randomNumber];
+                    //     app.containerArray[container]?.length ? app.containerArray[container].push(randomNumber) : app.containerArray[container] = [randomNumber];
+                    //     break;
+                    // case 7:
+                    //     app.allArray.map(function(item){
+                    //         if (!app.colArray[col].includes(item) && !app.rowArray.includes(item) && !app.containerArray[container].includes(item)){
+                    //             app.currentArray.push(item);
+                    //         }
+                    //     });
+                    //     console.log("currentArray4", app.currentArray);
+                    //     randomNumber = app.currentArray[Math.floor(Math.random() * app.currentArray.length)];
+                    //     app.rowArray.push(randomNumber);
+                    //     app.colArray[col]?.length ? app.colArray[col].push(randomNumber) : app.colArray[col] = [randomNumber];
+                    //     app.containerArray[container]?.length ? app.containerArray[container].push(randomNumber) : app.containerArray[container] = [randomNumber];
+                    //     break;
+                    case 8:
+                        app.allArray.map(function(item){
+                            if (!app.colArray[col].includes(item)){
+                                app.currentArray.push(item);
+                            }
+                        });
+                        // console.log("currentArray2", app.currentArray);
+                        // randomNumber = app.currentArray[Math.floor(Math.random() * app.currentArray.length)];
+                        // app.rowArray.push(randomNumber);
+                        // app.colArray[col]?.length ? app.colArray[col].push(randomNumber) : app.colArray[col] = [randomNumber];
+                        // app.containerArray[container]?.length ? app.containerArray[container].push(randomNumber) : app.containerArray[container] = [randomNumber];
                         break;
                 }
+                console.log("currentArray0", app.currentArray);
+                randomNumber = app.currentArray[Math.floor(Math.random() * app.currentArray.length)];
+                app.rowArray.push(randomNumber);
+                app.colArray[col]?.length ? app.colArray[col].push(randomNumber) : app.colArray[col] = [randomNumber];
+                app.containerArray[container]?.length ? app.containerArray[container].push(randomNumber) : app.containerArray[container] = [randomNumber];
                 if (col === 8) {
                     container -= 3;
                 } 
@@ -119,15 +205,20 @@ const app = {
                 console.log("match ok");
             } else {
                 console.log("pas de match");
+                console.log("row", row);
                 app.colArray.map(function(item,index) {
-                    item.slice(0, -1);
+                    app.colArray[index] = app.colArray[index].slice(0, -1);
                 });
                 console.log("newColArray", app.colArray);
                 for (var a = 1; a < 4; a++) {
-                    app.containerArray[app.containerArray.length - a].slice(0, -3);
+                    app.containerArray[app.containerArray.length - a] = app.containerArray[app.containerArray.length - a].slice(0, -3);
                 }
                 console.log("newContainerArray", app.containerArray);
-                // row--;
+                console.log("container", container);
+                if (row % 3 === 0) {
+                    container -= 3;
+                }
+                row--;
             }
         }
         console.log("rowArray", app.rowArray);
