@@ -44,3 +44,4 @@ while (true){
 
 console.log("containerArray", containerArray);
 console.log("colArray", colArray);
+
