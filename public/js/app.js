@@ -4,9 +4,12 @@ const app = {
     
     init: function() {
         app.drawGate();
+        app.listeners();
+        app.getNumbers();
     },
     drawGate: function() {
         let container = -4;
+        let id = 0;
             for (var row = 0; row < app.GATE; row++) {
                 for (var col = 0; col < app.GATE; col++) {
                     const div = document.createElement("div");
@@ -32,14 +35,33 @@ const app = {
                     div.setAttribute("row", row);
                     div.setAttribute("col", col);
                     div.setAttribute("container", container);
-                    
-                    //Affichage des nombres dans les cellules
-                    
-                    // div.innerText = app.colArray[col][row];
+                    div.id = id;
+
                     app.gateDOM.appendChild(div);
+                    id++;
             }
         }
     },
+    drawNumbers: function(numbers) {
+        let id = 0;
+        for (var row = 0; row < app.GATE; row++) {
+            for (var col = 0; col < app.GATE; col++) {
+                const div = document.getElementById(id)
+                div.innerText = numbers[id];
+                id++;
+            }
+        }
+    },
+    listeners: function() {
+        const generateButton = document.getElementById('generateButton');
+        generateButton.addEventListener('click', app.getNumbers);
+        
+    },
+    getNumbers: async function() {
+        const response = await fetch('http://localhost:3000/generate');
+        const numbers = await response.json();
+        app.drawNumbers(numbers);
+    }
 }
 
 document.addEventListener('DOMContentLoaded', app.init);
