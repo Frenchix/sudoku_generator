@@ -29,8 +29,9 @@ npm run dev
 
 Le chemin de l'API pour avoir la génération des nombres est: localhost:3000/generate (3000 ou autre selon .env)
 
-L'API renvoi un tableau de 81 chiffres
+L'API renvoi un tableau de 81 chiffres en JSON
 
+![sudoku](https://user-images.githubusercontent.com/73543816/133931253-d16f2b4d-8542-43b6-aacd-0ea0e7b1c0b0.JPG)
 
 Lancer le fichier index.html dans le dossier public pour avoir un apercu en Front 
 
